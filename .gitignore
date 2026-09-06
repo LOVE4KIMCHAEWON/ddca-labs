@@ -9,3 +9,15 @@ Desktop.ini
 *.swp
 *.tmp
 
+# FPGA tool output
+.Xil/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.jou
+*.log
+*.str
+*.wdb
+*.vcd
