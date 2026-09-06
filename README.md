@@ -37,10 +37,10 @@ See the [Lab 02 notes](lab02/README.md) for the design equations, I/O mapping, a
 .
 ├── README.md
 ├── lab01/
-    ├── README.md
-    ├── Comparator/
-    ├── Comparator(only nand gate)/
-    └── 4-bit Comparator Circuit/
+│   ├── README.md
+│   ├── Comparator/
+│   ├── Comparator(only nand gate)/
+│   └── 4-bit Comparator Circuit/
 └── lab02/
     ├── README.md
     ├── onebitadder.v
@@ -51,4 +51,4 @@ See the [Lab 02 notes](lab02/README.md) for the design equations, I/O mapping, a
 ## Notes
 
 - The screenshots capture representative input combinations and output states.
-- Blue wires and illuminated lamps indicate active logic signals in the simulator.
+- In Lab 01, blue wires and illuminated lamps indicate active logic signals. In the Lab 02 NVBoard screenshot, green LEDs indicate logic 1.

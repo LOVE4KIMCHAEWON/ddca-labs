@@ -25,10 +25,10 @@ Together, `{carryout, result}` represents the complete two-bit result for all ei
 `FourBitAdder` connects four `oneadder` instances from the least-significant bit to the most-significant bit. Each stage passes its carry to the next stage, and the final carry becomes `s[4]`.
 
 ```text
-A[0], B[0], 0  -> [FA0] -> S[0], carry[0]
-A[1], B[1], carry[0] -> [FA1] -> S[1], carry[1]
-A[2], B[2], carry[1] -> [FA2] -> S[2], carry[2]
-A[3], B[3], carry[2] -> [FA3] -> S[3], S[4]
+a[0], b[0], 0  -> [a0] -> s[0], c0
+a[1], b[1], c0 -> [a1] -> s[1], c1
+a[2], b[2], c1 -> [a2] -> s[2], c2
+a[3], b[3], c2 -> [a3] -> s[3], s[4]
 ```
 
 The output range is `0` to `30`, so five result bits are required.
@@ -45,6 +45,8 @@ The `FourBitAdder` inputs and output are mapped to the board interface as follow
 | `LED[4]` | `s[4]`, the final carry-out |
 
 The simulator or board constraints connect these switches and LEDs directly to the `FourBitAdder` ports.
+
+This repository contains the adder RTL and the NVBoard run screenshot. The local NVBoard build and pin-binding files are not included.
 
 ### NVBoard demonstration
 
