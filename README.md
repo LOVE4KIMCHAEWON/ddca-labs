@@ -9,8 +9,9 @@ Laboratory work for **DDCA (Digital Design and Computer Architecture)**, documen
 | [Lab 01](lab01/) | Digital comparators | Completed |
 | [Lab 02](lab02/) | Hierarchical adders and FPGA mapping | Completed |
 | [Lab 03](lab03/) | Adder with hexadecimal seven-segment display | Completed |
+| [Lab 04](lab04/) | Sequential turn-signal finite-state machine | Completed |
 
-The repository currently contains Labs 01-03. Additional labs can be added as they are completed.
+The repository currently contains Labs 01-04. Additional labs can be added as they are completed.
 
 ## Lab 01 overview
 
@@ -42,6 +43,16 @@ Lab 03 adds a hexadecimal seven-segment display to the four-bit adder:
 
 See the [Lab 03 notes](lab03/README.md) for the module roles, display interpretation, and both running-result screenshots.
 
+## Lab 04 overview
+
+Lab 04 introduces sequential logic through a car-style turn-signal controller:
+
+1. Model idle, left-turn, and right-turn sequences with a seven-state FSM.
+2. Progressively illuminate three lamps on the requested side using a divided clock enable.
+3. Verify both directions in a Vivado behavioral simulation and demonstrate them on NVBoard.
+
+See the [Lab 04 notes](lab04/README.md) for the state sequence, timing, Vivado waveform, and NVBoard results.
+
 ## Repository structure
 
 ```text
@@ -57,16 +68,22 @@ See the [Lab 03 notes](lab03/README.md) for the module roles, display interpreta
 │   ├── onebitadder.v
 │   ├── fourbitadder.v
 │   └── assets/
-└── lab03/
+├── lab03/
+│   ├── README.md
+│   ├── FullAdder.v
+│   ├── FourBitAdder.v
+│   ├── Decoder.v
+│   ├── top.v
+│   └── assets/
+└── lab04/
     ├── README.md
-    ├── FullAdder.v
-    ├── FourBitAdder.v
-    ├── Decoder.v
-    ├── top.v
+    ├── fsm.v
+    ├── clk_div.v
+    ├── fsm_tb.v
     └── assets/
 ```
 
 ## Notes
 
 - The screenshots capture representative input combinations and output states.
-- In Lab 01, blue wires and illuminated lamps indicate active logic signals. In the Lab 02 and Lab 03 NVBoard screenshots, green LEDs indicate logic 1.
+- In Lab 01, blue wires and illuminated lamps indicate active logic signals. In the Lab 02-Lab 04 NVBoard screenshots, green LEDs indicate logic 1.
