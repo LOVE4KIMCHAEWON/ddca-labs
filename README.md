@@ -8,8 +8,9 @@ Laboratory work for **DDCA (Digital Design and Computer Architecture)**, documen
 | --- | --- | --- |
 | [Lab 01](lab01/) | Digital comparators | Completed |
 | [Lab 02](lab02/) | Hierarchical adders and FPGA mapping | Completed |
+| [Lab 03](lab03/) | Adder with hexadecimal seven-segment display | Completed |
 
-The repository currently contains Labs 01 and 02. Additional labs can be added as they are completed.
+The repository currently contains Labs 01-03. Additional labs can be added as they are completed.
 
 ## Lab 01 overview
 
@@ -31,6 +32,16 @@ Lab 02 moves from gate-level arithmetic to modular Verilog and FPGA execution:
 
 See the [Lab 02 notes](lab02/README.md) for the design equations, I/O mapping, and NVBoard demonstration.
 
+## Lab 03 overview
+
+Lab 03 adds a hexadecimal seven-segment display to the four-bit adder:
+
+1. Reuse the gate-level full adder and four-bit ripple-carry structure.
+2. Decode the low four sum bits into an active-low seven-segment pattern.
+3. Show carry-out on LED4, demonstrated with `9 + 9 = 18` and `1 + 3 = 4` in NVBoard.
+
+See the [Lab 03 notes](lab03/README.md) for the module roles, display interpretation, and both running-result screenshots.
+
 ## Repository structure
 
 ```text
@@ -41,14 +52,21 @@ See the [Lab 02 notes](lab02/README.md) for the design equations, I/O mapping, a
 │   ├── Comparator/
 │   ├── Comparator(only nand gate)/
 │   └── 4-bit Comparator Circuit/
-└── lab02/
+├── lab02/
+│   ├── README.md
+│   ├── onebitadder.v
+│   ├── fourbitadder.v
+│   └── assets/
+└── lab03/
     ├── README.md
-    ├── onebitadder.v
-    ├── fourbitadder.v
+    ├── FullAdder.v
+    ├── FourBitAdder.v
+    ├── Decoder.v
+    ├── top.v
     └── assets/
 ```
 
 ## Notes
 
 - The screenshots capture representative input combinations and output states.
-- In Lab 01, blue wires and illuminated lamps indicate active logic signals. In the Lab 02 NVBoard screenshot, green LEDs indicate logic 1.
+- In Lab 01, blue wires and illuminated lamps indicate active logic signals. In the Lab 02 and Lab 03 NVBoard screenshots, green LEDs indicate logic 1.
