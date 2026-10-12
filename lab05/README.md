@@ -67,6 +67,23 @@ The routed timing report confirms that the 20 ns maximum-delay constraint is met
 | Worst data-path delay | 17.957 ns |
 | Worst path | `AluOp[1]` to `Zero` |
 
+## Part 3 report answers
+
+The values requested in Part 3 can be read directly from the supplied placed-utilization, I/O, and routed-timing reports:
+
+| Question | Answer | Report source |
+| --- | --- | --- |
+| Number of LUTs | **107 Slice LUTs** | `alu_utilization_placed.rpt` |
+| Number of bonded IOBs | **101** | `alu_utilization_placed.rpt` |
+| FPGA pin connected to output `Zero` | **Package pin `J1`**; FPGA pin name `IO_L3N_T0_DQS_AD5N_35` | `alu_io_placed.rpt` |
+| Where the longest path starts | **`AluOp[1]`**, an input port (package pin `K3`) | `alu_timing_summary_routed.rpt` |
+| Where the longest path ends | **`Zero`**, an output port (package pin `J1`) | `alu_timing_summary_routed.rpt` |
+| Delay of the longest path | **17.957 ns** | `alu_timing_summary_routed.rpt` |
+| Routing portion of the longest path | **68.004%** (12.211 ns of 17.957 ns) | `alu_timing_summary_routed.rpt` |
+| Logic levels in the longest path | **14** | `alu_timing_summary_routed.rpt` |
+
+The 14 logic levels consist of eight `CARRY4` stages, one input buffer, one `LUT3`, one `LUT5`, two `LUT6` stages, and one output buffer. With a 20.000 ns requirement and a 17.957 ns data-path delay, the path has 2.043 ns of positive slack and therefore meets the constraint.
+
 ## Project use
 
 Add `src/alu.v` and `src/timing.xdc` to a Vivado project and select `alu` as the top-level module. The files under `reports/` preserve the supplied post-placement and post-routing implementation results for reference.
